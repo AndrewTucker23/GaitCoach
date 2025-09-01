@@ -8,18 +8,19 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: macos-15
+    runs-on: macos-14
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-     - name: Select newest Xcode 16.x (and show versions)
+      - name: Select newest Xcode 16.x (and show versions)
         run: |
           set -e
           for v in 16.6 16.5 16.4 16.3 16.2 16.1 16.0; do
             if [ -d "/Applications/Xcode_${v}.app" ]; then
               sudo xcode-select -s "/Applications/Xcode_${v}.app"
-              echo "Switched to Xcode $v"
+              echo "Using Xcode $v"
               break
             fi
           done
@@ -35,41 +36,39 @@ jobs:
           echo "== List runtimes =="
           xcrun simctl list runtimes
 
-          # Grab the latest installed iOS runtime *identifier* (not the pretty string)
-          RUNTIME_ID="$(xcrun simctl list runtimes | \
-            sed -nE 's/.*(com\.apple\.CoreSimulator\.SimRuntime\.iOS-[0-9\-]+).*/\1/p' | tail -n1)"
-          if [[ -z "$RUNTIME_ID" ]]; then
+          # Get the latest installed iOS runtime identifier (e.g. com.apple.CoreSimulator.SimRuntime.iOS-18-6)
+          LATEST_IOS_RUNTIME=$(xcrun simctl list runtimes | awk '/iOS [0-9]+\.[0-9]+/ {print $NF}' | tail -1)
+          if [ -z "$LATEST_IOS_RUNTIME" ]; then
             echo "No iOS Simulator runtime identifier found"; exit 1
           fi
-          echo "Using runtime: $RUNTIME_ID"
+          echo "Using runtime: $LATEST_IOS_RUNTIME"
 
-          # Prefer iPhone 16 Pro; fall back if not available on this runner
+          # Prefer iPhone 16 Pro; fall back to 15 Pro
           DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro"
           if ! xcrun simctl list devicetypes | grep -q "iPhone 16 Pro"; then
             DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro"
           fi
           echo "Using device type: $DEV_TYPE"
 
-          # Clean any previous with same name (ignore errors)
+          # Clean any previous device with the same name
           xcrun simctl delete "CI-iPhone" >/dev/null 2>&1 || true
 
-          # Create + boot, then wait for boot to finish
-          UDID="$(xcrun simctl create CI-iPhone "$DEV_TYPE" "$RUNTIME_ID")"
+          # Create & boot
+          UDID=$(xcrun simctl create "CI-iPhone" "$DEV_TYPE" "$LATEST_IOS_RUNTIME")
           echo "udid=$UDID" >> "$GITHUB_OUTPUT"
           xcrun simctl boot "$UDID"
           xcrun simctl bootstatus "$UDID" -b
 
       - name: Build & Test
-        shell: bash
         run: |
           set -euo pipefail
           xcodebuild \
-  -project GaitCoach.xcodeproj \
-  -scheme GaitCoach \
-  -destination "id=${{ steps.sim.outputs.udid }}" \
-  -configuration Debug \
-  -testPlan GaitCoachTests \
-  clean test
+            -project GaitCoach.xcodeproj \
+            -scheme GaitCoach \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            -configuration Debug \
+            -testPlan GaitCoachTests \
+            clean test
 
       - name: Teardown simulator
         if: always()
