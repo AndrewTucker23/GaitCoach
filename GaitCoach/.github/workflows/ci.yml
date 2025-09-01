@@ -5,29 +5,42 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   build-and-test:
     runs-on: macos-14
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Select Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '15.4'
+      - name: Select Xcode 15.4
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
 
-      - name: Build & test
+      - name: Sanity check
         run: |
-          set -eo pipefail
+          pwd
+          ls -la
+          find . -maxdepth 2 -name "*.xcodeproj" -print
+
+      - name: Build & Test
+        run: |
+          set -euo pipefail
           xcodebuild \
             -project GaitCoach.xcodeproj \
             -scheme GaitCoach \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 15' \
             -configuration Debug \
-            clean test
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 15 Pro' \
+            clean test | xcpretty
+          exit ${PIPESTATUS[0]}  # propagate xcodebuild’s status through the pipe
+
+      - name: Upload result bundle (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcode-results
+          path: |
+            *.xcresult
+            ./**/Logs/Test/*.xcresult
+            ./**/Build/Logs/*
