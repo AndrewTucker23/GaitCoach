@@ -2,40 +2,22 @@ name: iOS CI
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   build-and-test:
-    runs-on: macos-15
+    runs-on: macos-14
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode 15.4
-        run: sudo xcode-select -switch /Applications/Xcode_15.4.app
-
-      - name: Show what’s in the repo
+      - name: Build & Test
         run: |
-          pwd
-          ls -la
-          echo "Found projects:"
-          find . -maxdepth 2 -name "*.xcodeproj" -print
-
-      - name: Build & test
-        run: |
-          set -euo pipefail
-          PROJ=$(find . -maxdepth 1 -name "*.xcodeproj" | head -n1)
-          echo "Using project: $PROJ"
-          xcodebuild -list -project "$PROJ"
+          set -eo pipefail
           xcodebuild \
-            -project "$PROJ" \
-            -scheme GaitCoach \
+            -project GaitCoach.xcodeproj \
+            -scheme "GaitCoach" \
+            -destination 'platform=iOS Simulator,name=iPhone 15 Pro' \
             -configuration Debug \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
             clean test
-          # If you really need a test plan, add the next line with the real plan name:
-          #   -testPlan 'Unit'
