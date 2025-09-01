@@ -161,7 +161,8 @@
 		F64C967B2E62180A007F076D /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		F64C967D2E621ED5007F076D /* GaitPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitPattern.swift; sourceTree = "<group>"; };
 		F64C967F2E621F10007F076D /* GaitPatternDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitPatternDetector.swift; sourceTree = "<group>"; };
-		F64C96812E63948E007F076D /* GaitCoachTests_PatternTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitCoachTests_PatternTaggerTests.swift; sourceTree = "<group>"; };
+		/* This is the fixed, explicit path so CI finds the file */
+		F64C96812E63948E007F076D /* GaitCoachTests_PatternTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GaitCoachTests_PatternTaggerTests.swift; path = GaitCoach/GaitCoachTests_PatternTaggerTests.swift; sourceTree = "<group>"; };
 		F64C96832E6394BC007F076D /* DiagnosticsExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsExporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,7 +224,7 @@
 				F64C96792E61D1F8007F076D /* PocketSide.swift */,
 				F64C96752E614B9F007F076D /* BodyAxes.swift */,
 				F64C96712E6148B9007F076D /* RootTabs.swift */,
-				F64C966F2E614849007F076D /* GaitProgressScreen.swift */,
+				F64C966F2E614849007F076D /* GaitProgressScreen */,
 				F64C966D2E6146F6007F076D /* GaitProgressView.swift */,
 				F64C966B2E6144C5007F076D /* GaitScore.swift */,
 				F64C96692E6140C5007F076D /* StepMetrics.swift */,
@@ -302,7 +303,7 @@
 /* Begin PBXNativeTarget section */
 		F64C95B72E4D94BA007F076D /* GaitCoach */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F64C95DA2E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoach" */;
+			buildConfigurationList = F64C95DA2E4D94BA007F076D /* Build configuration list for PBXNativeTarget "GaitCoach" */;
 			buildPhases = (
 				F64C95B42E4D94BA007F076D /* Sources */,
 				F64C95B52E4D94BA007F076D /* Frameworks */,
@@ -494,7 +495,7 @@
 				F64C96682E60D5C6007F076D /* OrientationCalibrator.swift in Sources */,
 				F64C96702E614849007F076D /* GaitProgressScreen.swift in Sources */,
 				F64C95EC2E4D9A22007F076D /* ExercisesView.swift in Sources */,
-				F64C962A2E58EAE1007F076D /* PatternCoachView.swift in Sources */,
+				F64C962A2E58EAE1007F076D /* PatternCoachView in Sources */,
 				F64C96242E4F144E007F076D /* PDFExporter.swift in Sources */,
 				F64C96722E6148B9007F076D /* RootTabs.swift in Sources */,
 				F64C95E62E4D99EC007F076D /* CalibrationView.swift in Sources */,
@@ -511,7 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-		F61B495E2E63B7FD009320FF /* GaitCoachTests_PatternTaggerTests.swift in Sources */,
+				F61B495E2E63B7FD009320FF /* GaitCoachTests_PatternTaggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
