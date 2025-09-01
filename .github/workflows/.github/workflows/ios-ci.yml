@@ -1,0 +1,29 @@
+name: iOS CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show working dir
+        run: |
+          pwd
+          ls -la
+
+      - name: Build & Test
+        run: |
+          set -eo pipefail
+          xcodebuild \
+            -project ./GaitCoach.xcodeproj \
+            -scheme "GaitCoach" \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            clean test
