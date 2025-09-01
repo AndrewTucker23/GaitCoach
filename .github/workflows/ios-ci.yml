@@ -8,13 +8,13 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: macos-14
+    runs-on: macos-15   # <— newer image with newer Xcode/runtimes
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select newest Xcode 16.x (and show versions)
+      - name: Select newest Xcode 16.x
         run: |
           set -e
           for v in 16.6 16.5 16.4 16.3 16.2 16.1 16.0; do
@@ -27,34 +27,41 @@ jobs:
           xcodebuild -version
           xcodebuild -showsdks
 
-      - name: Create simulator
+      - name: Create simulator (match SDK version)
         id: sim
         shell: bash
         run: |
           set -euo pipefail
 
-          echo "== List runtimes =="
+          # Which simulator SDK does the selected Xcode support? (e.g. iphonesimulator18.6)
+          SDK_VER=$(xcodebuild -showsdks | awk '/iphonesimulator/ {print $NF}' | tail -1 | sed 's/iphonesimulator//')
+          RUNTIME_ID="com.apple.CoreSimulator.SimRuntime.iOS-${SDK_VER//./-}"
+          echo "SDK version: $SDK_VER"
+          echo "Runtime ID:   $RUNTIME_ID"
+
+          echo "== Installed runtimes =="
           xcrun simctl list runtimes
 
-          # Get the latest installed iOS runtime identifier (e.g. com.apple.CoreSimulator.SimRuntime.iOS-18-6)
-          LATEST_IOS_RUNTIME=$(xcrun simctl list runtimes | awk '/iOS [0-9]+\.[0-9]+/ {print $NF}' | tail -1)
-          if [ -z "$LATEST_IOS_RUNTIME" ]; then
-            echo "No iOS Simulator runtime identifier found"; exit 1
+          # Ensure that runtime actually exists on the runner
+          if ! xcrun simctl list runtimes | grep -q "$RUNTIME_ID"; then
+            echo "Expected runtime $RUNTIME_ID is not installed on this runner."
+            echo "Falling back to the latest available iOS runtime..."
+            RUNTIME_ID=$(xcrun simctl list runtimes | awk '/iOS [0-9]+\.[0-9]+/ {print $NF}' | tail -1)
+            echo "Fallback runtime: $RUNTIME_ID"
           fi
-          echo "Using runtime: $LATEST_IOS_RUNTIME"
 
-          # Prefer iPhone 16 Pro; fall back to 15 Pro
+          # Prefer iPhone 16 Pro; fall back to 15 Pro if needed
           DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro"
           if ! xcrun simctl list devicetypes | grep -q "iPhone 16 Pro"; then
             DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro"
           fi
-          echo "Using device type: $DEV_TYPE"
+          echo "Device type: $DEV_TYPE"
 
-          # Clean any previous device with the same name
+          # Clean up any previous CI device
           xcrun simctl delete "CI-iPhone" >/dev/null 2>&1 || true
 
-          # Create & boot
-          UDID=$(xcrun simctl create "CI-iPhone" "$DEV_TYPE" "$LATEST_IOS_RUNTIME")
+          # Create + boot
+          UDID=$(xcrun simctl create "CI-iPhone" "$DEV_TYPE" "$RUNTIME_ID")
           echo "udid=$UDID" >> "$GITHUB_OUTPUT"
           xcrun simctl boot "$UDID"
           xcrun simctl bootstatus "$UDID" -b
