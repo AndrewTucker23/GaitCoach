@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "5D0747CD-437B-4D74-BD59-BDCA263C6752",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GaitCoach.xcodeproj",
+        "identifier" : "F64C95C52E4D94BB007F076D",
+        "name" : "GaitCoachTests"
+      }
+    }
+  ],
+  "version" : 1
+}

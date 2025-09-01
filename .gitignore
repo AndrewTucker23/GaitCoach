@@ -1,0 +1,10 @@
+# Xcode
+xcuserdata/
+*.xcuserdatad
+*.xccheckout
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+DerivedData/
+build/
+
+# SwiftPM
+.build/

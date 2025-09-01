@@ -1,0 +1,859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F61B495E2E63B7FD009320FF /* GaitCoachTests:PatternTaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96812E63948E007F076D /* GaitCoachTests:PatternTaggerTests.swift */; };
+		F64C95E42E4D995D007F076D /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E32E4D995D007F076D /* AppTabView.swift */; };
+		F64C95E62E4D99EC007F076D /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E52E4D99EC007F076D /* CalibrationView.swift */; };
+		F64C95E82E4D9A03007F076D /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E72E4D9A03007F076D /* SessionView.swift */; };
+		F64C95EA2E4D9A12007F076D /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E92E4D9A12007F076D /* ReportView.swift */; };
+		F64C95EC2E4D9A22007F076D /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95EB2E4D9A22007F076D /* ExercisesView.swift */; };
+		F64C95EE2E4D9A37007F076D /* ProgressViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95ED2E4D9A37007F076D /* ProgressViewScreen.swift */; };
+		F64C95F02E4D9BEE007F076D /* MotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95EF2E4D9BEE007F076D /* MotionService.swift */; };
+		F64C95F22E4D9EFA007F076D /* BaselineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95F12E4D9EFA007F076D /* BaselineStore.swift */; };
+		F64C95F42E4E4372007F076D /* SessionSummaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95F32E4E4372007F076D /* SessionSummaryStore.swift */; };
+		F64C95F62E4E48EF007F076D /* AgeAndNorms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95F52E4E48EF007F076D /* AgeAndNorms.swift */; };
+		F64C95F82E4E4913007F076D /* UserSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95F72E4E4913007F076D /* UserSettingsStore.swift */; };
+		F64C95FC2E4E4959007F076D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95FB2E4E4959007F076D /* SettingsView.swift */; };
+		F64C95FE2E4E4D98007F076D /* CitationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95FD2E4E4D98007F076D /* CitationsView.swift */; };
+		F64C96002E4E4DC1007F076D /* SafetyDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95FF2E4E4DC1007F076D /* SafetyDisclaimerView.swift */; };
+		F64C96022E4E4E5E007F076D /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96012E4E4E5E007F076D /* SessionDetailView.swift */; };
+		F64C96042E4E50D6007F076D /* ScoreBands.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96032E4E50D6007F076D /* ScoreBands.swift */; };
+		F64C960A2E4E5360007F076D /* SessionPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96092E4E5360007F076D /* SessionPDFView.swift */; };
+		F64C960E2E4E554C007F076D /* PatternTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C960D2E4E554C007F076D /* PatternTagger.swift */; };
+		F64C96142E4E6D27007F076D /* BackgroundMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96132E4E6D27007F076D /* BackgroundMonitor.swift */; };
+		F64C96162E4E6D69007F076D /* NudgeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96152E4E6D69007F076D /* NudgeBanner.swift */; };
+		F64C96182E4E6F0A007F076D /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96172E4E6F0A007F076D /* TabRouter.swift */; };
+		F64C961A2E4E7344007F076D /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96192E4E7344007F076D /* HealthKitManager.swift */; };
+		F64C961C2E4E7372007F076D /* GaitCoachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C961B2E4E7372007F076D /* GaitCoachApp.swift */; };
+		F64C961E2E4E739F007F076D /* MobilityWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C961D2E4E739F007F076D /* MobilityWatcher.swift */; };
+		F64C96222E4ED317007F076D /* ErrorStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96212E4ED317007F076D /* ErrorStrip.swift */; };
+		F64C96242E4F144E007F076D /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96232E4F144E007F076D /* PDFExporter.swift */; };
+		F64C96262E54F1C5007F076D /* HapticCoach.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96252E54F1C5007F076D /* HapticCoach.swift */; };
+		F64C96282E58E620007F076D /* ExerciseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96272E58E620007F076D /* ExerciseCatalog.swift */; };
+		F64C962A2E58EAE1007F076D /* PatternCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96292E58EAE1007F076D /* PatternCoachView.swift */; };
+		F64C962C2E5A54F9007F076D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C962B2E5A54F9007F076D /* OnboardingView.swift */; };
+		F64C962E2E5A583F007F076D /* ExercisePlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C962D2E5A583F007F076D /* ExercisePlanStore.swift */; };
+		F64C96322E5A588F007F076D /* ExercisePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96312E5A588F007F076D /* ExercisePlayerView.swift */; };
+		F64C96342E5A58B4007F076D /* SafetyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96332E5A58B4007F076D /* SafetyEngine.swift */; };
+		F64C96362E5A58D8007F076D /* NudgeLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96352E5A58D8007F076D /* NudgeLogStore.swift */; };
+		F64C963C2E5BF7E9007F076D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C963B2E5BF7E9007F076D /* Theme.swift */; };
+		F64C963E2E5BF809007F076D /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C963D2E5BF809007F076D /* ProgressRing.swift */; };
+		F64C96422E5BFCD5007F076D /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96412E5BFCD5007F076D /* TodayView.swift */; };
+		F64C96462E5BFE33007F076D /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96452E5BFE33007F076D /* Sex.swift */; };
+		F64C96482E5C000A007F076D /* Muscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96472E5C000A007F076D /* Muscle.swift */; };
+		F64C964A2E5C0B08007F076D /* VideoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96492E5C0B08007F076D /* VideoLibrary.swift */; };
+		F64C964E2E5C15B4007F076D /* VideoLibrary+Pick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C964D2E5C15B4007F076D /* VideoLibrary+Pick.swift */; };
+		F64C96522E5CE4F9007F076D /* Targeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96512E5CE4F9007F076D /* Targeting.swift */; };
+		F64C96542E5CF4DE007F076D /* HealthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96532E5CF4DE007F076D /* HealthBackground.swift */; };
+		F64C96562E5CFC67007F076D /* TargetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96552E5CFC67007F076D /* TargetSettingsView.swift */; };
+		F64C96582E5CFFBF007F076D /* AutoRampEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96572E5CFFBF007F076D /* AutoRampEngine.swift */; };
+		F64C965A2E5E212C007F076D /* ThemeColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96592E5E212C007F076D /* ThemeColours.swift */; };
+		F64C965C2E5E382B007F076D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C965B2E5E382B007F076D /* AppTheme.swift */; };
+		F64C965E2E6007C9007F076D /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C965D2E6007C8007F076D /* MoreView.swift */; };
+		F64C96602E60937C007F076D /* OnboardingGait.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C965F2E60937C007F076D /* OnboardingGait.swift */; };
+		F64C96622E60CE7C007F076D /* GaitOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96612E60CE7C007F076D /* GaitOrientation.swift */; };
+		F64C96642E60D563007F076D /* BodyTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96632E60D563007F076D /* BodyTransform.swift */; };
+		F64C96682E60D5C6007F076D /* OrientationCalibrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96672E60D5C6007F076D /* OrientationCalibrator.swift */; };
+		F64C966A2E6140C5007F076D /* StepMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96692E6140C5007F076D /* StepMetrics.swift */; };
+		F64C966C2E6144C5007F076D /* GaitScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C966B2E6144C5007F076D /* GaitScore.swift */; };
+		F64C966E2E6146F6007F076D /* GaitProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C966D2E6146F6007F076D /* GaitProgressView.swift */; };
+		F64C96702E614849007F076D /* GaitProgressScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C966F2E614849007F076D /* GaitProgressScreen.swift */; };
+		F64C96722E6148B9007F076D /* RootTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96712E6148B9007F076D /* RootTabs.swift */; };
+		F64C96762E614B9F007F076D /* BodyAxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96752E614B9F007F076D /* BodyAxes.swift */; };
+		F64C967A2E61D1F8007F076D /* PocketSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96792E61D1F8007F076D /* PocketSide.swift */; };
+		F64C967C2E62180A007F076D /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C967B2E62180A007F076D /* ExerciseDetailView.swift */; };
+		F64C967E2E621ED6007F076D /* GaitPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C967D2E621ED5007F076D /* GaitPattern.swift */; };
+		F64C96802E621F10007F076D /* GaitPatternDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C967F2E621F10007F076D /* GaitPatternDetector.swift */; };
+		F64C96842E6394BC007F076D /* DiagnosticsExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96832E6394BC007F076D /* DiagnosticsExporter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F64C95C72E4D94BB007F076D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F64C95B02E4D94BA007F076D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F64C95B72E4D94BA007F076D;
+			remoteInfo = GaitCoach;
+		};
+		F64C95D12E4D94BB007F076D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F64C95B02E4D94BA007F076D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F64C95B72E4D94BA007F076D;
+			remoteInfo = GaitCoach;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F61B495F2E63B972009320FF /* GaitCoachTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GaitCoachTests; sourceTree = "<group>"; };
+		F61B49602E63BB40009320FF /* GaitCoachTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GaitCoachTests; sourceTree = "<group>"; };
+		F61B49612E63C00B009320FF /* GaitCoachTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GaitCoachTests; sourceTree = "<group>"; };
+		F61B49622E63C3EE009320FF /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
+		F64C95B82E4D94BA007F076D /* GaitCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaitCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64C95C62E4D94BB007F076D /* GaitCoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaitCoachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64C95D02E4D94BB007F076D /* GaitCoachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaitCoachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64C95E32E4D995D007F076D /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		F64C95E52E4D99EC007F076D /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		F64C95E72E4D9A03007F076D /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		F64C95E92E4D9A12007F076D /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		F64C95EB2E4D9A22007F076D /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
+		F64C95ED2E4D9A37007F076D /* ProgressViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewScreen.swift; sourceTree = "<group>"; };
+		F64C95EF2E4D9BEE007F076D /* MotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionService.swift; sourceTree = "<group>"; };
+		F64C95F12E4D9EFA007F076D /* BaselineStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineStore.swift; sourceTree = "<group>"; };
+		F64C95F32E4E4372007F076D /* SessionSummaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSummaryStore.swift; sourceTree = "<group>"; };
+		F64C95F52E4E48EF007F076D /* AgeAndNorms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeAndNorms.swift; sourceTree = "<group>"; };
+		F64C95F72E4E4913007F076D /* UserSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsStore.swift; sourceTree = "<group>"; };
+		F64C95FB2E4E4959007F076D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F64C95FD2E4E4D98007F076D /* CitationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitationsView.swift; sourceTree = "<group>"; };
+		F64C95FF2E4E4DC1007F076D /* SafetyDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyDisclaimerView.swift; sourceTree = "<group>"; };
+		F64C96012E4E4E5E007F076D /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		F64C96032E4E50D6007F076D /* ScoreBands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBands.swift; sourceTree = "<group>"; };
+		F64C96092E4E5360007F076D /* SessionPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPDFView.swift; sourceTree = "<group>"; };
+		F64C960D2E4E554C007F076D /* PatternTagger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTagger.swift; sourceTree = "<group>"; };
+		F64C96132E4E6D27007F076D /* BackgroundMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMonitor.swift; sourceTree = "<group>"; };
+		F64C96152E4E6D69007F076D /* NudgeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeBanner.swift; sourceTree = "<group>"; };
+		F64C96172E4E6F0A007F076D /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
+		F64C96192E4E7344007F076D /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		F64C961B2E4E7372007F076D /* GaitCoachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitCoachApp.swift; sourceTree = "<group>"; };
+		F64C961D2E4E739F007F076D /* MobilityWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilityWatcher.swift; sourceTree = "<group>"; };
+		F64C961F2E4E8D15007F076D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F64C96212E4ED317007F076D /* ErrorStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStrip.swift; sourceTree = "<group>"; };
+		F64C96232E4F144E007F076D /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
+		F64C96252E54F1C5007F076D /* HapticCoach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticCoach.swift; sourceTree = "<group>"; };
+		F64C96272E58E620007F076D /* ExerciseCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCatalog.swift; sourceTree = "<group>"; };
+		F64C96292E58EAE1007F076D /* PatternCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternCoachView.swift; sourceTree = "<group>"; };
+		F64C962B2E5A54F9007F076D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F64C962D2E5A583F007F076D /* ExercisePlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlanStore.swift; sourceTree = "<group>"; };
+		F64C96312E5A588F007F076D /* ExercisePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlayerView.swift; sourceTree = "<group>"; };
+		F64C96332E5A58B4007F076D /* SafetyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyEngine.swift; sourceTree = "<group>"; };
+		F64C96352E5A58D8007F076D /* NudgeLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeLogStore.swift; sourceTree = "<group>"; };
+		F64C963B2E5BF7E9007F076D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		F64C963D2E5BF809007F076D /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		F64C96412E5BFCD5007F076D /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		F64C96452E5BFE33007F076D /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		F64C96472E5C000A007F076D /* Muscle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle.swift; sourceTree = "<group>"; };
+		F64C96492E5C0B08007F076D /* VideoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibrary.swift; sourceTree = "<group>"; };
+		F64C964D2E5C15B4007F076D /* VideoLibrary+Pick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoLibrary+Pick.swift"; sourceTree = "<group>"; };
+		F64C96512E5CE4F9007F076D /* Targeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targeting.swift; sourceTree = "<group>"; };
+		F64C96532E5CF4DE007F076D /* HealthBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBackground.swift; sourceTree = "<group>"; };
+		F64C96552E5CFC67007F076D /* TargetSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettingsView.swift; sourceTree = "<group>"; };
+		F64C96572E5CFFBF007F076D /* AutoRampEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRampEngine.swift; sourceTree = "<group>"; };
+		F64C96592E5E212C007F076D /* ThemeColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColours.swift; sourceTree = "<group>"; };
+		F64C965B2E5E382B007F076D /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		F64C965D2E6007C8007F076D /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		F64C965F2E60937C007F076D /* OnboardingGait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingGait.swift; sourceTree = "<group>"; };
+		F64C96612E60CE7C007F076D /* GaitOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitOrientation.swift; sourceTree = "<group>"; };
+		F64C96632E60D563007F076D /* BodyTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTransform.swift; sourceTree = "<group>"; };
+		F64C96672E60D5C6007F076D /* OrientationCalibrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationCalibrator.swift; sourceTree = "<group>"; };
+		F64C96692E6140C5007F076D /* StepMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepMetrics.swift; sourceTree = "<group>"; };
+		F64C966B2E6144C5007F076D /* GaitScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitScore.swift; sourceTree = "<group>"; };
+		F64C966D2E6146F6007F076D /* GaitProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitProgressView.swift; sourceTree = "<group>"; };
+		F64C966F2E614849007F076D /* GaitProgressScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitProgressScreen.swift; sourceTree = "<group>"; };
+		F64C96712E6148B9007F076D /* RootTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabs.swift; sourceTree = "<group>"; };
+		F64C96752E614B9F007F076D /* BodyAxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyAxes.swift; sourceTree = "<group>"; };
+		F64C96792E61D1F8007F076D /* PocketSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketSide.swift; sourceTree = "<group>"; };
+		F64C967B2E62180A007F076D /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
+		F64C967D2E621ED5007F076D /* GaitPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitPattern.swift; sourceTree = "<group>"; };
+		F64C967F2E621F10007F076D /* GaitPatternDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitPatternDetector.swift; sourceTree = "<group>"; };
+		F64C96812E63948E007F076D /* GaitCoachTests:PatternTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GaitCoachTests:PatternTaggerTests.swift"; sourceTree = "<group>"; };
+		F64C96832E6394BC007F076D /* DiagnosticsExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsExporter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F64C95BA2E4D94BA007F076D /* GaitCoach */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GaitCoach;
+			sourceTree = "<group>";
+		};
+		F64C95C92E4D94BB007F076D /* GaitCoachTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GaitCoachTests;
+			sourceTree = "<group>";
+		};
+		F64C95D32E4D94BB007F076D /* GaitCoachUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GaitCoachUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F64C95B52E4D94BA007F076D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C95C32E4D94BB007F076D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C95CD2E4D94BB007F076D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F64C95AF2E4D94BA007F076D = {
+			isa = PBXGroup;
+			children = (
+				F61B49612E63C00B009320FF /* GaitCoachTests */,
+				F61B49602E63BB40009320FF /* GaitCoachTests */,
+				F61B495F2E63B972009320FF /* GaitCoachTests */,
+				F64C96832E6394BC007F076D /* DiagnosticsExporter.swift */,
+				F64C96812E63948E007F076D /* GaitCoachTests:PatternTaggerTests.swift */,
+				F61B49622E63C3EE009320FF /* Unit.xctestplan */,
+				F64C967F2E621F10007F076D /* GaitPatternDetector.swift */,
+				F64C967D2E621ED5007F076D /* GaitPattern.swift */,
+				F64C967B2E62180A007F076D /* ExerciseDetailView.swift */,
+				F64C96792E61D1F8007F076D /* PocketSide.swift */,
+				F64C96752E614B9F007F076D /* BodyAxes.swift */,
+				F64C96712E6148B9007F076D /* RootTabs.swift */,
+				F64C966F2E614849007F076D /* GaitProgressScreen.swift */,
+				F64C966D2E6146F6007F076D /* GaitProgressView.swift */,
+				F64C966B2E6144C5007F076D /* GaitScore.swift */,
+				F64C96692E6140C5007F076D /* StepMetrics.swift */,
+				F64C96672E60D5C6007F076D /* OrientationCalibrator.swift */,
+				F64C96632E60D563007F076D /* BodyTransform.swift */,
+				F64C96612E60CE7C007F076D /* GaitOrientation.swift */,
+				F64C965F2E60937C007F076D /* OnboardingGait.swift */,
+				F64C965D2E6007C8007F076D /* MoreView.swift */,
+				F64C965B2E5E382B007F076D /* AppTheme.swift */,
+				F64C96592E5E212C007F076D /* ThemeColours.swift */,
+				F64C96572E5CFFBF007F076D /* AutoRampEngine.swift */,
+				F64C96552E5CFC67007F076D /* TargetSettingsView.swift */,
+				F64C96532E5CF4DE007F076D /* HealthBackground.swift */,
+				F64C96512E5CE4F9007F076D /* Targeting.swift */,
+				F64C964D2E5C15B4007F076D /* VideoLibrary+Pick.swift */,
+				F64C96492E5C0B08007F076D /* VideoLibrary.swift */,
+				F64C96472E5C000A007F076D /* Muscle.swift */,
+				F64C96452E5BFE33007F076D /* Sex.swift */,
+				F64C96412E5BFCD5007F076D /* TodayView.swift */,
+				F64C963D2E5BF809007F076D /* ProgressRing.swift */,
+				F64C963B2E5BF7E9007F076D /* Theme.swift */,
+				F64C96352E5A58D8007F076D /* NudgeLogStore.swift */,
+				F64C96332E5A58B4007F076D /* SafetyEngine.swift */,
+				F64C96312E5A588F007F076D /* ExercisePlayerView.swift */,
+				F64C962D2E5A583F007F076D /* ExercisePlanStore.swift */,
+				F64C962B2E5A54F9007F076D /* OnboardingView.swift */,
+				F64C96292E58EAE1007F076D /* PatternCoachView.swift */,
+				F64C96272E58E620007F076D /* ExerciseCatalog.swift */,
+				F64C96252E54F1C5007F076D /* HapticCoach.swift */,
+				F64C96232E4F144E007F076D /* PDFExporter.swift */,
+				F64C96212E4ED317007F076D /* ErrorStrip.swift */,
+				F64C961F2E4E8D15007F076D /* Info.plist */,
+				F64C961D2E4E739F007F076D /* MobilityWatcher.swift */,
+				F64C961B2E4E7372007F076D /* GaitCoachApp.swift */,
+				F64C96192E4E7344007F076D /* HealthKitManager.swift */,
+				F64C96172E4E6F0A007F076D /* TabRouter.swift */,
+				F64C96152E4E6D69007F076D /* NudgeBanner.swift */,
+				F64C96132E4E6D27007F076D /* BackgroundMonitor.swift */,
+				F64C960D2E4E554C007F076D /* PatternTagger.swift */,
+				F64C96092E4E5360007F076D /* SessionPDFView.swift */,
+				F64C96032E4E50D6007F076D /* ScoreBands.swift */,
+				F64C96012E4E4E5E007F076D /* SessionDetailView.swift */,
+				F64C95FF2E4E4DC1007F076D /* SafetyDisclaimerView.swift */,
+				F64C95FD2E4E4D98007F076D /* CitationsView.swift */,
+				F64C95FB2E4E4959007F076D /* SettingsView.swift */,
+				F64C95F72E4E4913007F076D /* UserSettingsStore.swift */,
+				F64C95F52E4E48EF007F076D /* AgeAndNorms.swift */,
+				F64C95F32E4E4372007F076D /* SessionSummaryStore.swift */,
+				F64C95F12E4D9EFA007F076D /* BaselineStore.swift */,
+				F64C95EF2E4D9BEE007F076D /* MotionService.swift */,
+				F64C95ED2E4D9A37007F076D /* ProgressViewScreen.swift */,
+				F64C95EB2E4D9A22007F076D /* ExercisesView.swift */,
+				F64C95E92E4D9A12007F076D /* ReportView.swift */,
+				F64C95E72E4D9A03007F076D /* SessionView.swift */,
+				F64C95E52E4D99EC007F076D /* CalibrationView.swift */,
+				F64C95E32E4D995D007F076D /* AppTabView.swift */,
+				F64C95BA2E4D94BA007F076D /* GaitCoach */,
+				F64C95C92E4D94BB007F076D /* GaitCoachTests */,
+				F64C95D32E4D94BB007F076D /* GaitCoachUITests */,
+				F64C95B92E4D94BA007F076D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F64C95B92E4D94BA007F076D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F64C95B82E4D94BA007F076D /* GaitCoach.app */,
+				F64C95C62E4D94BB007F076D /* GaitCoachTests.xctest */,
+				F64C95D02E4D94BB007F076D /* GaitCoachUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F64C95B72E4D94BA007F076D /* GaitCoach */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F64C95DA2E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoach" */;
+			buildPhases = (
+				F64C95B42E4D94BA007F076D /* Sources */,
+				F64C95B52E4D94BA007F076D /* Frameworks */,
+				F64C95B62E4D94BA007F076D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F64C95BA2E4D94BA007F076D /* GaitCoach */,
+			);
+			name = GaitCoach;
+			packageProductDependencies = (
+			);
+			productName = GaitCoach;
+			productReference = F64C95B82E4D94BA007F076D /* GaitCoach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F64C95C52E4D94BB007F076D /* GaitCoachTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F64C95DD2E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoachTests" */;
+			buildPhases = (
+				F64C95C22E4D94BB007F076D /* Sources */,
+				F64C95C32E4D94BB007F076D /* Frameworks */,
+				F64C95C42E4D94BB007F076D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F64C95C82E4D94BB007F076D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F64C95C92E4D94BB007F076D /* GaitCoachTests */,
+			);
+			name = GaitCoachTests;
+			packageProductDependencies = (
+			);
+			productName = GaitCoachTests;
+			productReference = F64C95C62E4D94BB007F076D /* GaitCoachTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F64C95CF2E4D94BB007F076D /* GaitCoachUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F64C95E02E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoachUITests" */;
+			buildPhases = (
+				F64C95CC2E4D94BB007F076D /* Sources */,
+				F64C95CD2E4D94BB007F076D /* Frameworks */,
+				F64C95CE2E4D94BB007F076D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F64C95D22E4D94BB007F076D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F64C95D32E4D94BB007F076D /* GaitCoachUITests */,
+			);
+			name = GaitCoachUITests;
+			packageProductDependencies = (
+			);
+			productName = GaitCoachUITests;
+			productReference = F64C95D02E4D94BB007F076D /* GaitCoachUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F64C95B02E4D94BA007F076D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					F64C95B72E4D94BA007F076D = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					F64C95C52E4D94BB007F076D = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = F64C95B72E4D94BA007F076D;
+					};
+					F64C95CF2E4D94BB007F076D = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = F64C95B72E4D94BA007F076D;
+					};
+				};
+			};
+			buildConfigurationList = F64C95B32E4D94BA007F076D /* Build configuration list for PBXProject "GaitCoach" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F64C95AF2E4D94BA007F076D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F64C95B92E4D94BA007F076D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F64C95B72E4D94BA007F076D /* GaitCoach */,
+				F64C95C52E4D94BB007F076D /* GaitCoachTests */,
+				F64C95CF2E4D94BB007F076D /* GaitCoachUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F64C95B62E4D94BA007F076D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C95C42E4D94BB007F076D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C95CE2E4D94BB007F076D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F64C95B42E4D94BA007F076D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F64C96142E4E6D27007F076D /* BackgroundMonitor.swift in Sources */,
+				F64C967C2E62180A007F076D /* ExerciseDetailView.swift in Sources */,
+				F64C95E42E4D995D007F076D /* AppTabView.swift in Sources */,
+				F64C96462E5BFE33007F076D /* Sex.swift in Sources */,
+				F64C96842E6394BC007F076D /* DiagnosticsExporter.swift in Sources */,
+				F64C967E2E621ED6007F076D /* GaitPattern.swift in Sources */,
+				F64C96582E5CFFBF007F076D /* AutoRampEngine.swift in Sources */,
+				F64C95E82E4D9A03007F076D /* SessionView.swift in Sources */,
+				F64C962C2E5A54F9007F076D /* OnboardingView.swift in Sources */,
+				F64C961E2E4E739F007F076D /* MobilityWatcher.swift in Sources */,
+				F64C967A2E61D1F8007F076D /* PocketSide.swift in Sources */,
+				F64C965E2E6007C9007F076D /* MoreView.swift in Sources */,
+				F64C960E2E4E554C007F076D /* PatternTagger.swift in Sources */,
+				F64C962E2E5A583F007F076D /* ExercisePlanStore.swift in Sources */,
+				F64C95F22E4D9EFA007F076D /* BaselineStore.swift in Sources */,
+				F64C96622E60CE7C007F076D /* GaitOrientation.swift in Sources */,
+				F64C964E2E5C15B4007F076D /* VideoLibrary+Pick.swift in Sources */,
+				F64C95FE2E4E4D98007F076D /* CitationsView.swift in Sources */,
+				F64C961C2E4E7372007F076D /* GaitCoachApp.swift in Sources */,
+				F64C96022E4E4E5E007F076D /* SessionDetailView.swift in Sources */,
+				F64C96762E614B9F007F076D /* BodyAxes.swift in Sources */,
+				F64C96522E5CE4F9007F076D /* Targeting.swift in Sources */,
+				F64C966C2E6144C5007F076D /* GaitScore.swift in Sources */,
+				F64C963C2E5BF7E9007F076D /* Theme.swift in Sources */,
+				F64C95F42E4E4372007F076D /* SessionSummaryStore.swift in Sources */,
+				F64C95EA2E4D9A12007F076D /* ReportView.swift in Sources */,
+				F64C96282E58E620007F076D /* ExerciseCatalog.swift in Sources */,
+				F64C96482E5C000A007F076D /* Muscle.swift in Sources */,
+				F64C963E2E5BF809007F076D /* ProgressRing.swift in Sources */,
+				F64C95EE2E4D9A37007F076D /* ProgressViewScreen.swift in Sources */,
+				F64C96362E5A58D8007F076D /* NudgeLogStore.swift in Sources */,
+				F64C961A2E4E7344007F076D /* HealthKitManager.swift in Sources */,
+				F64C96322E5A588F007F076D /* ExercisePlayerView.swift in Sources */,
+				F64C95F02E4D9BEE007F076D /* MotionService.swift in Sources */,
+				F64C96342E5A58B4007F076D /* SafetyEngine.swift in Sources */,
+				F64C96182E4E6F0A007F076D /* TabRouter.swift in Sources */,
+				F64C966E2E6146F6007F076D /* GaitProgressView.swift in Sources */,
+				F64C96222E4ED317007F076D /* ErrorStrip.swift in Sources */,
+				F64C960A2E4E5360007F076D /* SessionPDFView.swift in Sources */,
+				F64C96162E4E6D69007F076D /* NudgeBanner.swift in Sources */,
+				F64C96642E60D563007F076D /* BodyTransform.swift in Sources */,
+				F64C96562E5CFC67007F076D /* TargetSettingsView.swift in Sources */,
+				F64C965C2E5E382B007F076D /* AppTheme.swift in Sources */,
+				F64C96262E54F1C5007F076D /* HapticCoach.swift in Sources */,
+				F64C95F62E4E48EF007F076D /* AgeAndNorms.swift in Sources */,
+				F64C966A2E6140C5007F076D /* StepMetrics.swift in Sources */,
+				F64C96042E4E50D6007F076D /* ScoreBands.swift in Sources */,
+				F64C964A2E5C0B08007F076D /* VideoLibrary.swift in Sources */,
+				F64C96802E621F10007F076D /* GaitPatternDetector.swift in Sources */,
+				F64C96542E5CF4DE007F076D /* HealthBackground.swift in Sources */,
+				F64C96682E60D5C6007F076D /* OrientationCalibrator.swift in Sources */,
+				F64C96702E614849007F076D /* GaitProgressScreen.swift in Sources */,
+				F64C95EC2E4D9A22007F076D /* ExercisesView.swift in Sources */,
+				F64C962A2E58EAE1007F076D /* PatternCoachView.swift in Sources */,
+				F64C96242E4F144E007F076D /* PDFExporter.swift in Sources */,
+				F64C96722E6148B9007F076D /* RootTabs.swift in Sources */,
+				F64C95E62E4D99EC007F076D /* CalibrationView.swift in Sources */,
+				F64C96602E60937C007F076D /* OnboardingGait.swift in Sources */,
+				F64C965A2E5E212C007F076D /* ThemeColours.swift in Sources */,
+				F64C95F82E4E4913007F076D /* UserSettingsStore.swift in Sources */,
+				F64C96002E4E4DC1007F076D /* SafetyDisclaimerView.swift in Sources */,
+				F64C96422E5BFCD5007F076D /* TodayView.swift in Sources */,
+				F64C95FC2E4E4959007F076D /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C95C22E4D94BB007F076D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F61B495E2E63B7FD009320FF /* GaitCoachTests:PatternTaggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C95CC2E4D94BB007F076D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F64C95C82E4D94BB007F076D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F64C95B72E4D94BA007F076D /* GaitCoach */;
+			targetProxy = F64C95C72E4D94BB007F076D /* PBXContainerItemProxy */;
+		};
+		F64C95D22E4D94BB007F076D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F64C95B72E4D94BA007F076D /* GaitCoach */;
+			targetProxy = F64C95D12E4D94BB007F076D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F64C95D82E4D94BB007F076D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F64C95D92E4D94BB007F076D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F64C95DB2E4D94BB007F076D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GaitCoach/GaitCoach.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewtucker.GaitCoach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		F64C95DC2E4D94BB007F076D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GaitCoach/GaitCoach.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewtucker.GaitCoach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		F64C95DE2E4D94BB007F076D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewtucker.GaitCoachTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GaitCoach.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GaitCoach";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		F64C95DF2E4D94BB007F076D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewtucker.GaitCoachTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GaitCoach.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GaitCoach";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		F64C95E12E4D94BB007F076D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewtucker.GaitCoachUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = GaitCoach;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		F64C95E22E4D94BB007F076D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewtucker.GaitCoachUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = GaitCoach;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F64C95B32E4D94BA007F076D /* Build configuration list for PBXProject "GaitCoach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F64C95D82E4D94BB007F076D /* Debug */,
+				F64C95D92E4D94BB007F076D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F64C95DA2E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F64C95DB2E4D94BB007F076D /* Debug */,
+				F64C95DC2E4D94BB007F076D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F64C95DD2E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoachTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F64C95DE2E4D94BB007F076D /* Debug */,
+				F64C95DF2E4D94BB007F076D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F64C95E02E4D94BB007F076D /* Build configuration list for PBXNativeTarget "GaitCoachUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F64C95E12E4D94BB007F076D /* Debug */,
+				F64C95E22E4D94BB007F076D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F64C95B02E4D94BA007F076D /* Project object */;
+}
