@@ -14,16 +14,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show Xcode version
-        run: xcodebuild -version
+      - name: Select Xcode 15.4
+        run: sudo xcode-select -switch /Applications/Xcode_15.4.app
 
-      - name: Build & Test
+      # (optional) tiny sanity check so we can see the project in logs next time
+      - name: List repo contents
+        run: ls -la
+
+      - name: Build & test
         run: |
-          set -o pipefail
+          set -euo pipefail
+          # show what xcodebuild sees (useful if it ever fails again)
+          xcodebuild -list -project GaitCoach.xcodeproj
+          # build + run tests
           xcodebuild \
             -project GaitCoach.xcodeproj \
-            -scheme "GaitCoach" \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -scheme GaitCoach \
             -configuration Debug \
-            -testPlan "GaitCoachTests" \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
             clean test
+          # If you want to force a specific test plan, add:
+          #   -testPlan Unit
+          # (or whatever your plan is actually named)
