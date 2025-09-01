@@ -12,25 +12,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ⬇️ Select Xcode 16 to match your project format
+      # Use Xcode 16.x to match your project format
       - name: Select Xcode 16
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16'   # or '16.*' / '16.0' — any 16.x is fine
+          xcode-version: '16'   # or '16.2' if you want to lock it
 
-      - name: Show working dir
+      # Create an iOS Simulator (pick the latest installed iOS runtime; use iPhone 16 Pro if available, else 15 Pro)
+      - name: Create simulator
+        id: sim
+        shell: bash
         run: |
-          xcodebuild -version
-          xcode-select -p
-          ls -la
+          set -euo pipefail
+          echo "== List runtimes =="
+          xcrun simctl list runtimes
+
+          # Pick the newest installed iOS runtime (e.g., com.apple.CoreSimulator.SimRuntime.iOS-18-2)
+          RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS .* -/ {print $2}' | tail -n1)
+          if [[ -z "${RUNTIME_ID:-}" ]]; then
+            echo "No iOS Simulator runtimes installed"; exit 1
+          fi
+          echo "Using runtime: $RUNTIME_ID"
+
+          # Device type: prefer iPhone 16 Pro, fall back to 15 Pro if needed
+          DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro"
+          if ! xcrun simctl list devicetypes | grep -q "iPhone 16 Pro"; then
+            DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro"
+          fi
+          echo "Using device type: $DEV_TYPE"
+
+          UDID=$(xcrun simctl create "CI-iPhone" "$DEV_TYPE" "$RUNTIME_ID")
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+          # Boot and wait until it's ready
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
 
       - name: Build & Test
+        shell: bash
         run: |
           set -eo pipefail
           xcodebuild \
             -project ./GaitCoach.xcodeproj \
             -scheme "GaitCoach" \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}" \
             -sdk iphonesimulator \
             -configuration Debug \
             clean test
