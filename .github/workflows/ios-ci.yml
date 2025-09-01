@@ -69,14 +69,12 @@ jobs:
       - name: Build & Test
         run: |
           set -euo pipefail
-          xcodebuild \
-            -project GaitCoach.xcodeproj \
-            -scheme GaitCoach \
-            -destination "id=${{ steps.sim.outputs.udid }}" \
-            -configuration Debug \
-            -testPlan GaitCoachTests \
-            clean test
-
+         xcodebuild \
+  -project GaitCoach.xcodeproj \
+  -scheme GaitCoach \
+  -destination "id=${{ steps.sim.outputs.udid }}" \
+  -configuration Debug \
+  clean test
       - name: Teardown simulator
         if: always()
         run: |
