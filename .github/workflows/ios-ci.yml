@@ -13,9 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select Xcode 16.x (and show versions)
+     - name: Select newest Xcode 16.x (and show versions)
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.2.app || true
+          set -e
+          for v in 16.6 16.5 16.4 16.3 16.2 16.1 16.0; do
+            if [ -d "/Applications/Xcode_${v}.app" ]; then
+              sudo xcode-select -s "/Applications/Xcode_${v}.app"
+              echo "Switched to Xcode $v"
+              break
+            fi
+          done
           xcodebuild -version
           xcodebuild -showsdks
 
@@ -57,13 +64,12 @@ jobs:
         run: |
           set -euo pipefail
           xcodebuild \
-            -project GaitCoach.xcodeproj \
-            -scheme GaitCoach \
-            -destination "id=${{ steps.sim.outputs.udid }}" \
-            -sdk iphonesimulator \
-            -configuration Debug \
-            -testPlan GaitCoachTests \
-            clean test
+  -project GaitCoach.xcodeproj \
+  -scheme GaitCoach \
+  -destination "id=${{ steps.sim.outputs.udid }}" \
+  -configuration Debug \
+  -testPlan GaitCoachTests \
+  clean test
 
       - name: Teardown simulator
         if: always()
