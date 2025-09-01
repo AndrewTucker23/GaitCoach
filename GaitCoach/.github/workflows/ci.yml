@@ -17,23 +17,25 @@ jobs:
       - name: Select Xcode 15.4
         run: sudo xcode-select -switch /Applications/Xcode_15.4.app
 
-      # (optional) tiny sanity check so we can see the project in logs next time
-      - name: List repo contents
-        run: ls -la
+      - name: Show what’s in the repo
+        run: |
+          pwd
+          ls -la
+          echo "Found projects:"
+          find . -maxdepth 2 -name "*.xcodeproj" -print
 
       - name: Build & test
         run: |
           set -euo pipefail
-          # show what xcodebuild sees (useful if it ever fails again)
-          xcodebuild -list -project GaitCoach.xcodeproj
-          # build + run tests
+          PROJ=$(find . -maxdepth 1 -name "*.xcodeproj" | head -n1)
+          echo "Using project: $PROJ"
+          xcodebuild -list -project "$PROJ"
           xcodebuild \
-            -project GaitCoach.xcodeproj \
+            -project "$PROJ" \
             -scheme GaitCoach \
             -configuration Debug \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
             clean test
-          # If you want to force a specific test plan, add:
-          #   -testPlan Unit
-          # (or whatever your plan is actually named)
+          # If you really need a test plan, add the next line with the real plan name:
+          #   -testPlan 'Unit'
