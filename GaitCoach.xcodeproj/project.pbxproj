@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F61B495E2E63B7FD009320FF /* GaitCoachTests:PatternTaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96812E63948E007F076D /* GaitCoachTests:PatternTaggerTests.swift */; };
+		F61B495E2E63B7FD009320FF /* GaitCoachTests_PatternTaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C96812E63948E007F076D /* GaitCoachTests_PatternTaggerTests.swift */; };
 		F64C95E42E4D995D007F076D /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E32E4D995D007F076D /* AppTabView.swift */; };
 		F64C95E62E4D99EC007F076D /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E52E4D99EC007F076D /* CalibrationView.swift */; };
 		F64C95E82E4D9A03007F076D /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C95E72E4D9A03007F076D /* SessionView.swift */; };
@@ -161,7 +161,7 @@
 		F64C967B2E62180A007F076D /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		F64C967D2E621ED5007F076D /* GaitPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitPattern.swift; sourceTree = "<group>"; };
 		F64C967F2E621F10007F076D /* GaitPatternDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitPatternDetector.swift; sourceTree = "<group>"; };
-		F64C96812E63948E007F076D /* GaitCoachTests:PatternTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GaitCoachTests:PatternTaggerTests.swift"; sourceTree = "<group>"; };
+		F64C96812E63948E007F076D /* GaitCoachTests_PatternTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitCoachTests_PatternTaggerTests.swift; sourceTree = "<group>"; };
 		F64C96832E6394BC007F076D /* DiagnosticsExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsExporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +215,7 @@
 				F61B49602E63BB40009320FF /* GaitCoachTests */,
 				F61B495F2E63B972009320FF /* GaitCoachTests */,
 				F64C96832E6394BC007F076D /* DiagnosticsExporter.swift */,
-				F64C96812E63948E007F076D /* GaitCoachTests:PatternTaggerTests.swift */,
+				F64C96812E63948E007F076D /* GaitCoachTests_PatternTaggerTests.swift */,
 				F61B49622E63C3EE009320FF /* Unit.xctestplan */,
 				F64C967F2E621F10007F076D /* GaitPatternDetector.swift */,
 				F64C967D2E621ED5007F076D /* GaitPattern.swift */,
@@ -511,7 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61B495E2E63B7FD009320FF /* GaitCoachTests:PatternTaggerTests.swift in Sources */,
+		F61B495E2E63B7FD009320FF /* GaitCoachTests_PatternTaggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
