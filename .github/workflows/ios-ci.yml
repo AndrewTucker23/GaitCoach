@@ -66,15 +66,17 @@ jobs:
           xcrun simctl boot "$UDID"
           xcrun simctl bootstatus "$UDID" -b
 
-      - name: Build & Test
-        run: |
-          set -euo pipefail
-         xcodebuild \
-  -project GaitCoach.xcodeproj \
-  -scheme GaitCoach \
-  -destination "id=${{ steps.sim.outputs.udid }}" \
-  -configuration Debug \
-  clean test
+   - name: Build & Test
+  run: |
+    set -euo pipefail
+    xcodebuild \
+      -project GaitCoach.xcodeproj \
+      -scheme GaitCoach \
+      -destination "id=${{ steps.sim.outputs.udid }}" \
+      -configuration Debug \
+      CODE_SIGNING_ALLOWED=NO \
+      clean test
+
       - name: Teardown simulator
         if: always()
         run: |
