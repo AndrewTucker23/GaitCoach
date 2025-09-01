@@ -8,39 +8,22 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode 15.4
-        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
-
-      - name: Sanity check
-        run: |
-          pwd
-          ls -la
-          find . -maxdepth 2 -name "*.xcodeproj" -print
+      - name: Show Xcode version
+        run: xcodebuild -version
 
       - name: Build & Test
         run: |
-          set -euo pipefail
+          set -o pipefail
           xcodebuild \
             -project GaitCoach.xcodeproj \
-            -scheme GaitCoach \
+            -scheme "GaitCoach" \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
             -configuration Debug \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 15 Pro' \
-            clean test | xcpretty
-          exit ${PIPESTATUS[0]}  # propagate xcodebuild’s status through the pipe
-
-      - name: Upload result bundle (always)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: xcode-results
-          path: |
-            *.xcresult
-            ./**/Logs/Test/*.xcresult
-            ./**/Build/Logs/*
+            -testPlan "GaitCoachTests" \
+            clean test
