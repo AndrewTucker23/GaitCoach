@@ -1,61 +1,33 @@
-name: iOS CI
-
-on:
-  push:
-  pull_request:
-
-jobs:
-  build-and-test:
-    runs-on: macos-14
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # Use Xcode 16.x to match your project format
-      - name: Select Xcode 16
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '16'   # or '16.2' if you want to lock it
-
-      # Create an iOS Simulator (pick the latest installed iOS runtime; use iPhone 16 Pro if available, else 15 Pro)
       - name: Create simulator
         id: sim
         shell: bash
         run: |
           set -euo pipefail
+
           echo "== List runtimes =="
           xcrun simctl list runtimes
 
-          # Pick the newest installed iOS runtime (e.g., com.apple.CoreSimulator.SimRuntime.iOS-18-2)
-          RUNTIME_ID=$(xcrun simctl list runtimes | awk -F'[()]' '/iOS .* -/ {print $2}' | tail -n1)
+          # Grab the latest installed iOS runtime *identifier* (not the pretty version string)
+          RUNTIME_ID=$(xcrun simctl list runtimes | \
+            sed -nE 's/.*(com\.apple\.CoreSimulator\.SimRuntime\.iOS-[0-9\-]+).*/\1/p' | tail -n1)
+
           if [[ -z "${RUNTIME_ID:-}" ]]; then
-            echo "No iOS Simulator runtimes installed"; exit 1
+            echo "No iOS Simulator runtime identifier found"; exit 1
           fi
           echo "Using runtime: $RUNTIME_ID"
 
-          # Device type: prefer iPhone 16 Pro, fall back to 15 Pro if needed
+          # Prefer iPhone 16 Pro; fall back to 15 Pro if it doesn't exist
           DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro"
           if ! xcrun simctl list devicetypes | grep -q "iPhone 16 Pro"; then
             DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro"
           fi
           echo "Using device type: $DEV_TYPE"
 
+          # Clean up any previous device with the same name (ignore errors)
+          xcrun simctl delete "CI-iPhone" >/dev/null 2>&1 || true
+
+          # Create, boot, and wait for readiness
           UDID=$(xcrun simctl create "CI-iPhone" "$DEV_TYPE" "$RUNTIME_ID")
           echo "udid=$UDID" >> "$GITHUB_OUTPUT"
-
-          # Boot and wait until it's ready
           xcrun simctl boot "$UDID"
           xcrun simctl bootstatus "$UDID" -b
-
-      - name: Build & Test
-        shell: bash
-        run: |
-          set -eo pipefail
-          xcodebuild \
-            -project ./GaitCoach.xcodeproj \
-            -scheme "GaitCoach" \
-            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}" \
-            -sdk iphonesimulator \
-            -configuration Debug \
-            clean test
