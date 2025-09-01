@@ -1,33 +1,8 @@
-      - name: Create simulator
-        id: sim
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          echo "== List runtimes =="
-          xcrun simctl list runtimes
-
-          # Grab the latest installed iOS runtime *identifier* (not the pretty version string)
-          RUNTIME_ID=$(xcrun simctl list runtimes | \
-            sed -nE 's/.*(com\.apple\.CoreSimulator\.SimRuntime\.iOS-[0-9\-]+).*/\1/p' | tail -n1)
-
-          if [[ -z "${RUNTIME_ID:-}" ]]; then
-            echo "No iOS Simulator runtime identifier found"; exit 1
-          fi
-          echo "Using runtime: $RUNTIME_ID"
-
-          # Prefer iPhone 16 Pro; fall back to 15 Pro if it doesn't exist
-          DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro"
-          if ! xcrun simctl list devicetypes | grep -q "iPhone 16 Pro"; then
-            DEV_TYPE="com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro"
-          fi
-          echo "Using device type: $DEV_TYPE"
-
-          # Clean up any previous device with the same name (ignore errors)
-          xcrun simctl delete "CI-iPhone" >/dev/null 2>&1 || true
-
-          # Create, boot, and wait for readiness
-          UDID=$(xcrun simctl create "CI-iPhone" "$DEV_TYPE" "$RUNTIME_ID")
-          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
-          xcrun simctl boot "$UDID"
-          xcrun simctl bootstatus "$UDID" -b
+name: (disabled) legacy workflow
+on:
+  workflow_dispatch:  # manual only; won't run on push/PR
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "disabled"
